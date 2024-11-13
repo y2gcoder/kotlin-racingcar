@@ -55,6 +55,9 @@ class StringCalculatorTest {
         strings = [
             "1 # 2",
             "* 1 - 2",
+            "1 2",
+            "1 + 2 -",
+            "2 3 4 2 + * /",
         ],
     )
     fun `입력한 사칙 연산식이 올바르지 않을 때 IllegalArgumentException 예외를 던진다`(input: String) {
