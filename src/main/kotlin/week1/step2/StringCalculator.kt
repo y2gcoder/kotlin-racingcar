@@ -19,21 +19,26 @@ class StringCalculator {
         for (i in parts.indices.filter { i -> i % 2 == 0 }) {
             val numberString = parts[i + 1]
             val number = numberString.toDouble()
-            val operationString = parts[i]
+            val operatorSymbol = parts[i]
 
-            if (operationString == "+") {
-                result += number
-            } else if (operationString == "-") {
-                result -= number
-            } else if (operationString == "*") {
-                result *= number
-            } else if (operationString == "/") {
-                result /= number
-            } else {
-                throw IllegalArgumentException("올바른 사칙 연산 기호가 아닙니다: operatorString=$operationString")
-            }
+            result = Operator.fromSymbol(operatorSymbol).apply(result, number)
         }
 
         return result
+    }
+}
+
+enum class Operator(val symbol: String, val apply: (Double, Double) -> Double) {
+    ADD("+", { operand1, operand2 -> operand1 + operand2 }),
+    SUBTRACT("-", { operand1, operand2 -> operand1 - operand2 }),
+    MULTIPLY("*", { operand1, operand2 -> operand1 * operand2 }),
+    DIVIDE("/", { operand1, operand2 -> operand1 / operand2 }),
+    ;
+
+    companion object {
+        fun fromSymbol(symbol: String): Operator {
+            return entries.firstOrNull { operator -> operator.symbol == symbol }
+                ?: throw IllegalArgumentException("올바른 사칙 연산 기호가 아닙니다: symbol=$symbol")
+        }
     }
 }
