@@ -1,17 +1,12 @@
 package week1.step3
 
-class Car {
-    var position: Int = DEFAULT_POSITION
-
+class Car(var position: Int = DEFAULT_POSITION) {
     fun move(randomNumber: Int) {
-        if (STOPPING_NUMBERS.contains(randomNumber)) {
-            return
+        when (randomNumber) {
+            in STOPPING_NUMBERS -> return
+            in FORWARDING_NUMBERS -> position++
+            else -> throw IllegalArgumentException("0-9 사이의 randomNumber 가 아닙니다: randomNumber=$randomNumber")
         }
-        if (FORWARDING_NUMBERS.contains(randomNumber)) {
-            position++
-            return
-        }
-        throw IllegalArgumentException("0-9 사이의 randomNumber 가 아닙니다: randomNumber=$randomNumber")
     }
 
     companion object {
