@@ -13,7 +13,7 @@
 
 ### 추가 피드백
 - [x] Car의 position 값을 외부에서 변경하지 못하도록 하기
-- [ ] car.move() 를 선택한 이유 설명하기
+- [x] car.move(randomNumber: Int) 를 선택한 이유 설명하기
 - [ ] functional interface vs 단순 함수형 선언 차이 체크 및 선택
 - [ ] kotlin list 생성 방법 숙지
 - [ ] RacingGame 생성 시 carCount 를 바로 받지 않고 ValueClass로 받도록 해보기
