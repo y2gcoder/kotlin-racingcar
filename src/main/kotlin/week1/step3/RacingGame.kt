@@ -11,9 +11,13 @@ value class CarRoster(val count: Int) {
     }
 }
 
+fun interface RandomNumberGenerator {
+    fun generate(): Int
+}
+
 class RacingGame(
     carRoster: CarRoster,
-    private val randomNumber: () -> Int = { Random.nextInt(0, 10) },
+    private val randomNumberGenerator: RandomNumberGenerator = RandomNumberGenerator { Random.nextInt(0, 10) },
 ) {
     private val cars: List<Car> = List(carRoster.count) { Car() }
 
@@ -26,7 +30,7 @@ class RacingGame(
     }
 
     private fun moveAllCarPerRound() {
-        cars.forEach { it.move(randomNumber()) }
+        cars.forEach { it.move(randomNumberGenerator.generate()) }
     }
 
     private fun getRoundResult() = RoundResult(cars.associateWith { it.position })
