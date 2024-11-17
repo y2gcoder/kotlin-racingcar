@@ -2,22 +2,20 @@ package week1.step3
 
 import kotlin.random.Random
 
-class RacingGame(
-    carCount: Int,
-    private val randomNumber: () -> Int = { Random.nextInt(0, 10) },
-) {
-    private val cars: List<Car>
-
+@JvmInline
+value class CarRoster(val count: Int) {
     init {
-        validateCarCount(carCount)
-        cars = List(carCount) { Car() }
-    }
-
-    private fun validateCarCount(carCount: Int) {
-        if (carCount <= 0) {
-            throw IllegalArgumentException("레이싱 게임을 하기 위해서는 차가 1대 이상이어야 합니다.")
+        require(count > 0) {
+            "레이싱 게임을 하기 위해서는 차가 1대 이상이어야 합니다."
         }
     }
+}
+
+class RacingGame(
+    carRoster: CarRoster,
+    private val randomNumber: () -> Int = { Random.nextInt(0, 10) },
+) {
+    private val cars: List<Car> = List(carRoster.count) { Car() }
 
     fun race(round: Int): List<RoundResult> {
         validateRound(round)

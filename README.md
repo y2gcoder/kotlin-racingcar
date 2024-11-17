@@ -16,5 +16,5 @@
 - [x] car.move(randomNumber: Int) 를 선택한 이유 설명하기
 - [ ] functional interface vs 단순 함수형 선언 차이 체크 및 선택
 - [ ] kotlin list 생성 방법 숙지
-- [ ] RacingGame 생성 시 carCount 를 바로 받지 않고 ValueClass로 받도록 해보기
+- [x] RacingGame 생성 시 carCount 를 바로 받지 않고 ValueClass로 받도록 해보기
 - [ ] RacingGameTest 에서 무조건 전진하는 함수를 따로 변수로 명확하게 표현하기(alwaysMove)
