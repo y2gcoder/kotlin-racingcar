@@ -12,7 +12,7 @@
 - [x] UI 로직: InputView, ResultView
 
 ### 추가 피드백
-- [ ] Car의 position 값을 외부에서 변경하지 못하도록 하기
+- [x] Car의 position 값을 외부에서 변경하지 못하도록 하기
 - [ ] car.move() 를 선택한 이유 설명하기
 - [ ] functional interface vs 단순 함수형 선언 차이 체크 및 선택
 - [ ] kotlin list 생성 방법 숙지

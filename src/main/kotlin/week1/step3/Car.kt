@@ -1,6 +1,9 @@
 package week1.step3
 
-class Car(var position: Int = DEFAULT_POSITION) {
+class Car(position: Int = DEFAULT_POSITION) {
+    var position: Int = position
+        private set
+
     fun move(randomNumber: Int) {
         when (randomNumber) {
             in STOPPING_NUMBERS -> return
