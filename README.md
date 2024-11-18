@@ -31,7 +31,7 @@
 ### 프로그래밍 요구사항
 - [x] 모든 로직에 단위 테스트를 구현(UI 제외)
 - [x] UI 로직: InputView, ResultView
-- [ ] Indent depth < 2
+- [x] Indent depth < 2
 - [ ] 함수 라인 <= 15 (함수가 한 가지 일만 하도록)
 - [ ] README.md 의 기능 목록 단위로 commit
 

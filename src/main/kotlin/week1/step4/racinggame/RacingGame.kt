@@ -41,8 +41,7 @@ class RacingGame(
 
     private fun moveAllCarPerRound() {
         cars.forEach {
-            val randomNumber = randomNumberGenerator.generate()
-            it.move(randomNumber)
+            it.move(randomNumberGenerator.generate())
         }
     }
 
