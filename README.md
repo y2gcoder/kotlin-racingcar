@@ -29,8 +29,8 @@
   - [x] 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한 명 이상일 수 있다.
 
 ### 프로그래밍 요구사항
-- [ ] 모든 로직에 단위 테스트를 구현(UI 제외)
-- [ ] UI 로직: InputView, ResultView
+- [x] 모든 로직에 단위 테스트를 구현(UI 제외)
+- [x] UI 로직: InputView, ResultView
 - [ ] Indent depth < 2
 - [ ] 함수 라인 <= 15 (함수가 한 가지 일만 하도록)
 - [ ] README.md 의 기능 목록 단위로 commit
