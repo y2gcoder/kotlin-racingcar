@@ -6,6 +6,8 @@ fun main() {
 
     val round = InputView.inputRound()
     val raceResult = racingGame.race(round)
-
     RacingGameRaceResultView.announceRaceResult(raceResult)
+
+    val winners = racingGame.getWinners()
+    RacingGameRaceResultView.announceRaceWinners(winners)
 }

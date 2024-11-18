@@ -33,16 +33,24 @@ class RacingGame(
         }
     }
 
+    private fun validateRound(round: Int) {
+        if (round <= 0) {
+            throw IllegalArgumentException("레이스는 1라운드 이상이어야 합니다.")
+        }
+    }
+
     private fun moveAllCarPerRound() {
-        cars.forEach { it.move(randomNumberGenerator.generate()) }
+        cars.forEach {
+            val randomNumber = randomNumberGenerator.generate()
+            it.move(randomNumber)
+        }
     }
 
     private fun getRoundResult() = RoundResult(cars.associateWith { it.position })
-}
 
-private fun validateRound(round: Int) {
-    if (round <= 0) {
-        throw IllegalArgumentException("레이스는 1라운드 이상이어야 합니다.")
+    fun getWinners(): List<Car> {
+        val winnerPosition = cars.maxOf { it.position }
+        return cars.filter { it.position == winnerPosition }
     }
 }
 
