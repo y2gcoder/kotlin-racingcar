@@ -33,7 +33,7 @@
 - [x] UI 로직: InputView, ResultView
 - [x] Indent depth < 2
 - [x] 함수 라인 <= 15 (함수가 한 가지 일만 하도록)
-- [ ] README.md 의 기능 목록 단위로 commit
+- [x] README.md 의 기능 목록 단위로 commit
 
 ### step 3 피드백
 - [ ] car.move(randomNumber) 를 클라이언트에서 봤을 때 이해하기 쉽도록 변경해보기 
