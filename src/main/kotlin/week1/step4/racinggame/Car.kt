@@ -1,6 +1,16 @@
 package week1.step4.racinggame
 
-class Car(position: Int = DEFAULT_POSITION) {
+class Car(val name: String, position: Int = DEFAULT_POSITION) {
+    init {
+        require(name.isNotBlank()) {
+            "자동차의 이름은 빈 문자열일 수 없습니다"
+        }
+
+        require(name.length <= 5) {
+            "자동차의 이름은 5글자까지 허용합니다"
+        }
+    }
+
     var position: Int = position
         private set
 

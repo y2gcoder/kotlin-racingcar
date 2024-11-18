@@ -3,11 +3,15 @@ package week1.step4.racinggame
 import kotlin.random.Random
 
 @JvmInline
-value class CarRoster(val count: Int) {
+value class CarRoster(private val carNames: List<String>) {
     init {
-        require(count > 0) {
+        require(carNames.isNotEmpty()) {
             "레이싱 게임을 하기 위해서는 차가 1대 이상이어야 합니다."
         }
+    }
+
+    fun createCars(): List<Car> {
+        return carNames.map { Car(it) }
     }
 }
 
@@ -19,7 +23,7 @@ class RacingGame(
     carRoster: CarRoster,
     private val randomNumberGenerator: RandomNumberGenerator = RandomNumberGenerator { Random.nextInt(0, 10) },
 ) {
-    private val cars: List<Car> = List(carRoster.count) { Car() }
+    private val cars: List<Car> = carRoster.createCars()
 
     fun race(round: Int): List<RoundResult> {
         validateRound(round)

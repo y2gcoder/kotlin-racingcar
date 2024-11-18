@@ -10,14 +10,11 @@ class RacingGameRaceResultView {
         }
 
         private fun printRoundResult(roundResult: RoundResult) {
-            roundResult.result.forEach { (_, position) ->
-                printCarPosition(position)
+            roundResult.result.forEach { (car, position) ->
+                print("${car.name} : ")
+                println("-".repeat(position))
             }
             println()
-        }
-
-        private fun printCarPosition(position: Int) {
-            println("-".repeat(position))
         }
     }
 }
