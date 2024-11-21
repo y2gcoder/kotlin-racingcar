@@ -5,8 +5,12 @@ fun main() {
     val racingGame = RacingGame(carRoster = CarRoster(carNames))
 
     val round = InputView.inputRound()
-    val raceResult = racingGame.race(round)
-    RacingGameRaceResultView.announceRaceResult(raceResult)
+    println("실행 결과")
+    (1..round).forEach {
+        println("round: $it")
+        racingGame.round()
+        RacingGameRaceResultView.announceRoundResult(racingGame.cars)
+    }
 
     val winners = racingGame.getWinners()
     RacingGameRaceResultView.announceRaceWinners(winners)
