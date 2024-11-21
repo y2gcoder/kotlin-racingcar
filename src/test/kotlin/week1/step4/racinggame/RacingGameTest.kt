@@ -29,7 +29,7 @@ class RacingGameTest : StringSpec({
         roundResults.forEachIndexed { index, roundResult ->
             val expectedPosition = index + 1
             roundResult.result.forEach { (car, roundPosition) ->
-                car.name shouldBeIn carNames
+                car.getName() shouldBeIn carNames
                 roundPosition shouldBe expectedPosition
             }
         }
@@ -48,7 +48,7 @@ class RacingGameTest : StringSpec({
 
         results.size shouldBe 3
         results.forEach { car ->
-            car.name shouldBeIn carNames
+            car.getName() shouldBeIn carNames
             car.position shouldBe round
         }
     }
@@ -72,7 +72,7 @@ class RacingGameTest : StringSpec({
         val results = sut.getWinners()
 
         results.size shouldBe 1
-        results[0].name shouldBe "pobi"
+        results[0].getName() shouldBe "pobi"
         results[0].position shouldBe round
     }
 })

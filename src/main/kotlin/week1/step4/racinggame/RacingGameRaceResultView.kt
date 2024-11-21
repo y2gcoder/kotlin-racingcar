@@ -18,7 +18,7 @@ class RacingGameRaceResultView {
         }
 
         fun announceRaceWinners(winners: List<Car>) {
-            println("${winners.joinToString(", ") { it.name }}가 최종 우승했습니다.")
+            println("${winners.joinToString(", ") { it.getName() }}가 최종 우승했습니다.")
         }
     }
 }

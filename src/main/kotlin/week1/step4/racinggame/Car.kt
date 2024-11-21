@@ -1,20 +1,7 @@
 package week1.step4.racinggame
 
-class Car(val name: String, position: Int = DEFAULT_POSITION) {
-    init {
-        validateName(name)
-    }
-
-    private fun validateName(name: String) {
-        require(name.isNotBlank()) {
-            "자동차의 이름은 빈 문자열일 수 없습니다"
-        }
-
-        require(name.length <= 5) {
-            "자동차의 이름은 5글자까지 허용합니다"
-        }
-    }
-
+class Car(name: String, position: Int = DEFAULT_POSITION) {
+    val name = CarName(name)
     var position: Int = position
         private set
 
@@ -23,6 +10,10 @@ class Car(val name: String, position: Int = DEFAULT_POSITION) {
         if (canMove(randomNumber)) {
             position++
         }
+    }
+
+    fun getName(): String {
+        return name.value
     }
 
     private fun validateRandomNumber(randomNumber: Int) {

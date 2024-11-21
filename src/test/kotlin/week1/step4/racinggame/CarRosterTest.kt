@@ -12,7 +12,7 @@ class CarRosterTest : StringSpec({
         val result = sut.createCars()
 
         result.size shouldBe 3
-        result.stream().map { it.name }.toList() shouldBe carNames
+        result.stream().map { it.getName() }.toList() shouldBe carNames
     }
 
     "자동차 이름 리스트는 하나 이상의 이름을 포함하고 있어야 한다" {
