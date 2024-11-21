@@ -49,4 +49,18 @@ class CarTest : StringSpec({
             currentPosition shouldBe initialPosition
         }
     }
+
+    "서로 다른 Car끼리 누가 승자인지 가릴 수 있다" {
+        val winner = Car("alpha", 1)
+        val loser = Car("beta", 0)
+
+        winner.isWin(loser) shouldBe true
+    }
+
+    "서로 다른 Car 끼리 비겼는지 가릴 수 있다" {
+        val car1 = Car("alpha", 0)
+        val car2 = Car("beta", 0)
+
+        car1.isDraw(car2) shouldBe true
+    }
 })

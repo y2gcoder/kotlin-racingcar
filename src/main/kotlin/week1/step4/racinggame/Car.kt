@@ -15,6 +15,14 @@ class Car(name: String, position: Int = DEFAULT_POSITION) {
         return name.value
     }
 
+    fun isWin(other: Car): Boolean {
+        return position > other.position
+    }
+
+    fun isDraw(other: Car): Boolean {
+        return position == other.position
+    }
+
     private fun canMove(randomNumber: Int): Boolean {
         return randomNumber in FORWARDING_NUMBERS
     }
