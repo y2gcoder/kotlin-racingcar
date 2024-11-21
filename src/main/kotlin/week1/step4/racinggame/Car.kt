@@ -5,21 +5,14 @@ class Car(name: String, position: Int = DEFAULT_POSITION) {
     var position: Int = position
         private set
 
-    fun move(randomNumber: Int) {
-        validateRandomNumber(randomNumber)
-        if (canMove(randomNumber)) {
+    fun move(randomNumber: RandomNumber) {
+        if (canMove(randomNumber.value)) {
             position++
         }
     }
 
     fun getName(): String {
         return name.value
-    }
-
-    private fun validateRandomNumber(randomNumber: Int) {
-        if (randomNumber !in 0..9) {
-            throw IllegalArgumentException("0-9 사이의 randomNumber 가 아닙니다: randomNumber=$randomNumber")
-        }
     }
 
     private fun canMove(randomNumber: Int): Boolean {

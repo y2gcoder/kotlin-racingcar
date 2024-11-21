@@ -31,7 +31,7 @@ class CarTest : StringSpec({
             val sut = Car("pobi")
             val initialPosition = sut.position
 
-            sut.move(randomNumber)
+            sut.move(RandomNumber(randomNumber))
 
             val currentPosition = sut.position
             currentPosition shouldBe initialPosition + 1
@@ -43,20 +43,10 @@ class CarTest : StringSpec({
             val sut = Car("pobi")
             val initialPosition = sut.position
 
-            sut.move(randomNumber)
+            sut.move(RandomNumber(randomNumber))
 
             val currentPosition = sut.position
             currentPosition shouldBe initialPosition
-        }
-    }
-
-    "Car는 0~9 이외의 값을 받으면 InvalidArgumentException 예외를 던진다" {
-        listOf(-1, 10).forEach { randomNumber ->
-            val sut = Car("pobi")
-
-            shouldThrow<IllegalArgumentException> {
-                sut.move(randomNumber)
-            }
         }
     }
 })

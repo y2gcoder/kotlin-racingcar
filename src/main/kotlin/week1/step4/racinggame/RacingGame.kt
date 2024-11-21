@@ -28,7 +28,7 @@ class RacingGame(
 
     private fun moveAllCarPerRound() {
         cars.forEach {
-            it.move(randomNumberGenerator.generate())
+            it.move(RandomNumber(randomNumberGenerator.generate()))
         }
     }
 
