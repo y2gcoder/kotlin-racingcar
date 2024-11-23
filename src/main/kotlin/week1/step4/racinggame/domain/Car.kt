@@ -1,4 +1,4 @@
-package week1.step4.racinggame
+package week1.step4.racinggame.domain
 
 class Car(val carName: CarName, position: Int = DEFAULT_POSITION) {
     var position: Int = position

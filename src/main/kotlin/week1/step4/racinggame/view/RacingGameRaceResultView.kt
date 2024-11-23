@@ -1,4 +1,6 @@
-package week1.step4.racinggame
+package week1.step4.racinggame.view
+
+import week1.step4.racinggame.domain.Car
 
 class RacingGameRaceResultView {
     companion object {
